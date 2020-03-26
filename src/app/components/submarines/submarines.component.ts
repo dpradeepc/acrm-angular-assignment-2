@@ -14,15 +14,15 @@ export class SubmarinesComponent implements OnInit {
   constructor(private realtimeService: RealtimeService, private submarineSrvice: SubmarineService) { }
 
   ngOnInit(): void {
-    this.realtimeService.submarines.subscribe((submarines)=>{
+    this.realtimeService.submarines.subscribe((submarines) => {
       this.submarines = submarines;
     });
   }
 
-  toggleVisibility(index){
+  toggleVisibility(index) {
     this.submarines[index].isVisible = !this.submarines[index].isVisible;
     this.realtimeService.publish({
-      channel: 's_channel', message: {type:'init', data:this.submarines}
+      channel: 's_channel', message: { type: 'init', data: this.submarines }
     });
   }
 

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ModalModule } from './shared/components/modal/modal.module'
 import { PubNubAngular } from 'pubnub-angular2';
 import { AppComponent } from './app.component';
 import { ControlRoomComponent } from './components/control-room/control-room.component';
@@ -12,12 +13,13 @@ import { AddSubmarineComponent } from './components/add-submarine/add-submarine.
     AppComponent,
     ControlRoomComponent,
     SubmarinesComponent,
-    AddSubmarineComponent
+    AddSubmarineComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule,
   ],
   providers: [PubNubAngular],
   bootstrap: [AppComponent]

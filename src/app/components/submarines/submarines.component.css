@@ -3,12 +3,12 @@ ul {
     margin: 5px;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: grey;
   }
   
   li {
     float: left;
-    border-right:1px solid #bbb;
+    border-right:1px solid black;
   }
   
   li:last-child {
@@ -23,9 +23,6 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
   
   .name {
     width: 200px;
