@@ -1,5 +1,11 @@
 # JackSparrow Assignment
 
+-Currently both the control room and the submarines page run from the same application but the communication between them is not using the standard Angular mechanisms used for component communication.
+-The communication is realtime using Pubnub, I have tested this locally by running separate instances of the application in firefox and chrome.
+-The effort is to make the code look production grade, I am still working on it and will be wrapping it later today.
+-I have the validation for duplicate names in place but not implemented it, I am not sure if I will be using the same code to write a custom validator as it might be performance intensive.
+-The CSS is not great lot of inconsistencies but I will try to iron them out.
+
 You are consulted to write a program to help Jack sparrow. There are 2 web pages - Control room and Submarines.
 
 One web page - Jack Sparrow's Control Room
