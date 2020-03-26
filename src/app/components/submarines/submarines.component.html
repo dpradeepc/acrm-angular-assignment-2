@@ -1,0 +1,7 @@
+
+<ul *ngFor="let submarine of submarines; let i=index">
+    <li><a class="name">{{submarine.name}}</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right"><a id="toggle-state" (click)="toggleVisibility(i)">{{submarine.isVisible?'Hide':'Show'}}</a></li>
+</ul>

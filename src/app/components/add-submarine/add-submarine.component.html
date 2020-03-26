@@ -1,0 +1,28 @@
+<div>
+
+<form [formGroup]="newSubmarineForm">
+        
+           <div>
+             <label for="name">Submarine Name</label>
+             <input type="text" id="name" formControlName="name" name="submarinename" placeholder="Submarine name.." class="feedback-input">
+            <span
+            *ngIf="!newSubmarineForm.get('name').valid && newSubmarineForm.get('name').touched"
+            class="help-block">Invalid  Name
+            </span>
+          </div>
+          
+            <div>
+          <label for="description">Description</label>
+            <textarea id="description" formControlName="description" class="feedback-input">Some text...</textarea>
+            </div>
+        
+          <span
+          *ngIf="!newSubmarineForm.get('description').valid && newSubmarineForm.get('description').touched"
+          class="help-block">Invalid Description
+        </span>
+          
+
+      <button [disabled]="newSubmarineForm.status == 'INVALID'" (click)="onFormSubmit()" class="submit">Submit</button>
+    </form>
+
+</div>

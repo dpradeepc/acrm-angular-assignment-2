@@ -1,0 +1,9 @@
+
+    <label for="country">Country</label>
+    <select *ngIf="submarines">
+      <ng-container *ngFor="let submarine of submarines">
+      <option *ngIf="submarine.isVisible"  [value]="submarine.name">{{submarine.name}}</option>
+      </ng-container>
+    </select>
+
+    <app-add-submarine></app-add-submarine>
