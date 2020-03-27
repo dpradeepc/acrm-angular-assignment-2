@@ -1,4 +1,6 @@
-<span class="add-submarine" (click)="openModal()"> Register Submarine (+)</span>
+<div class="add-container">
+    <div class="add-submarine" (click)="openModal()"> Register Submarine (+)</div>
+</div>
 <div id="aspect-content" *ngFor="let submarine of submarines; let i=index">
     <div class="aspect-tab ">
         <input [id]="i" type="checkbox" class="aspect-input" name="aspect">
@@ -35,18 +37,18 @@
                     </div>
                 </div>
                 <div>
+                    <div>
+                        <div class="section-header">
+                            <span>TOGGLE VISIBILITY</span>
+                        </div>
                         <div>
-                            <div class="section-header">
-                                <span>TOGGLE VISIBILITY</span>
-                            </div>
+                            <span>Go into stealth or visible mode by clciking on the button below</span>
                             <div>
-                                <span>Go into stealth or visible mode by clciking on the button below</span>
-                                <div>
                                 <span class="btn-toggle-visibility" (click)="toggleVisibility($event, i)">{{submarine.isVisible?'Hide':'Show'}}</span>
-                            </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

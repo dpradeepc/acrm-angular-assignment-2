@@ -333,7 +333,13 @@ body {
   }
 }
 
+.add-container {
+  width: 100%;
+  text-align: center;
+}
+
 .add-submarine{
+  display: inline-block;
   background-color: #ff6e00;
   border-radius: 10px;
   color: white;
