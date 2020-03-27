@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RealtimeService } from './services/realtime.service';
+import { RealtimeService } from '@app/services/realtime.service';
 
 @Component({
   selector: 'app-root',

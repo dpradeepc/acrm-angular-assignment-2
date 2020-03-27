@@ -1,6 +1,57 @@
+<span class="add-submarine" (click)="openModal()"> Register Submarine (+)</span>
+<div id="aspect-content" *ngFor="let submarine of submarines; let i=index">
+    <div class="aspect-tab ">
+        <input [id]="i" type="checkbox" class="aspect-input" name="aspect">
+        <label [for]="i" class="aspect-label"></label>
+        <div class="aspect-content">
+            <div class="aspect-info">
+                <div class="chart-pie negative over50">
+                    <span class="chart-pie-count">{{submarine.id}}</span>
+                    <div>
+                        <div class="first-fill"></div>
+                        <div class="second-fill" style="transform: rotate(249deg)"></div>
+                    </div>
+                </div>
+                <span class="aspect-name">{{submarine.name}}</span>
+            </div>
+            <div class="aspect-stat">
+                <div>
+                    <span *ngIf="submarine.isVisible" class="status-visible">Visible</span>
+                    <span *ngIf="!submarine.isVisible" class="status-hidden">Hidden</span>
+                    <span>Hide</span>
+                </div>
+            </div>
+        </div>
+        <div class="aspect-tab-content">
+            <div class="content-wrapper">
+                <div class="description">
+                    <div>
+                        <div class="section-header">
+                            <span>DESCRIPTION</span>
+                        </div>
+                        <div>
+                            <span>{{submarine.description}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                        <div>
+                            <div class="section-header">
+                                <span>TOGGLE VISIBILITY</span>
+                            </div>
+                            <div>
+                                <span>Go into stealth or visible mode by clciking on the button below</span>
+                                <div>
+                                <span class="btn-toggle-visibility" (click)="toggleVisibility($event, i)">{{submarine.isVisible?'Hide':'Show'}}</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<ul *ngFor="let submarine of submarines; let i=index">
-    <li><a class="name">{{submarine.name}}</a></li>
-    <li><p>{{submarine.description}}</p></li>
-    <li style="float:right"><a id="toggle-state" (click)="toggleVisibility(i)">{{submarine.isVisible?'Hide':'Show'}}</a></li>
-</ul>
+<jw-modal [id]="modalId">
+    <app-add-submarine (modalClose)="closeModal()"></app-add-submarine>
+</jw-modal>

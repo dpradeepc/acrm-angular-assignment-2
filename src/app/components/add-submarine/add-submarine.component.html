@@ -2,28 +2,31 @@
 
   <div class="jw-modal-body">
 
-    <form [formGroup]="newSubmarineForm">
-
-      <div>
-        <label for="name">Submarine Name</label>
-        <input type="text" id="name" formControlName="name" name="submarinename" placeholder="Submarine name.." class="feedback-input">
-        <span *ngIf="!newSubmarineForm.get('name').valid && newSubmarineForm.get('name').touched" class="help-block">Invalid Name
-        </span>
+    <div class="container">
+      <div class="info">
+        <h1>Register Submarine</h1>
       </div>
+    </div>
 
-      <div>
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description" class="feedback-input">Some text...</textarea>
-      </div>
+    <div class="form">
+      <form [formGroup]="newSubmarineForm">
 
-      <span *ngIf="!newSubmarineForm.get('description').valid && newSubmarineForm.get('description').touched" class="help-block">Invalid Description
-      </span>
+        <div>
+          <input type="text" id="name" formControlName="name" name="submarinename" placeholder="Submarine name.." class="feedback-input">
+          <span *ngIf="!newSubmarineForm.get('name').valid && newSubmarineForm.get('name').touched" class="error-message">Invalid Name</span>
+        </div>
 
+        <div>
+          <textarea id="description" formControlName="description">Some text...</textarea>
+          <span *ngIf="!newSubmarineForm.get('description').valid && newSubmarineForm.get('description').touched" class="error-message">Invalid Description</span>
+        </div>
 
-      <button [disabled]="newSubmarineForm.status == 'INVALID'" (click)="onFormSubmit()" class="submit">Submit</button>
-    </form>
+        <button [disabled]="newSubmarineForm.status == 'INVALID'" (click)="onFormSubmit()">Register</button>
+        <p *ngIf="errors.length" class="error-message">{{errors[0].message}}</p>
 
-    <button (click)="onModalClose();">Close</button>
+        <button (click)="onModalClose()" class="cancel">Cancel</button>
+      </form>
+    </div>
 
   </div>
 </div>

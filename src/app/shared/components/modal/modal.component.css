@@ -1,5 +1,4 @@
-/* MODAL STYLES
--------------------------------*/
+
 jw-modal {
     display: none;
   }
@@ -16,7 +15,6 @@ jw-modal {
         
     }
        
-  
         .jw-modal-body {
             padding: 20px;
             background: #fff;

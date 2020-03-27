@@ -1,13 +1,9 @@
-<label for="country">
-    Country</label>
+<h3>Control Room Component</h3>
+
+<label for="submarine">
+    Submarine</label>
 <select *ngIf="submarines">
     <ng-container *ngFor="let submarine of submarines">
         <option *ngIf="submarine.isVisible" [value]="submarine.name">{{submarine.name}}</option>
     </ng-container>
 </select>
-
-<button (click)="openModal()">Open Modal 1</button>
-
-<jw-modal [id]="modalId">
-    <app-add-submarine (modalClose)="closeModal()"></app-add-submarine>
-</jw-modal>
